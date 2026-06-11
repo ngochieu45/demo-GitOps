@@ -1,4 +1,3 @@
-# file: .github/workflows/validate.yml
 name: validate
 on: { pull_request: { paths: ["k8s/**"] } }
 jobs:
