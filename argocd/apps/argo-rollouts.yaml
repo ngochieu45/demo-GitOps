@@ -1,6 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-metadata: { name: kube-prometheus-stack, namespace: argocd }
+metadata: { name: argo-rollouts, namespace: argocd }
 spec:
   source:
     repoURL: https://prometheus-community.github.io/helm-charts
