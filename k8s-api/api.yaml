@@ -34,7 +34,7 @@ spec:
           value: "0"
 
         - name: VERSION
-          value: "v2"
+          value: "v1"
 
         readinessProbe:
           httpGet:
