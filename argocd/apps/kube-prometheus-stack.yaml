@@ -18,6 +18,7 @@ spec:
         prometheus:
           prometheusSpec:
             serviceMonitorSelectorNilUsesHelmValues: false
+            ruleSelectorNilUsesHelmValues: false
 
   destination:
     server: https://kubernetes.default.svc
