@@ -44,14 +44,19 @@ spec:
   strategy:
     canary:
       steps:
-      - setWeight: 25
-      - pause: {}
+        - setWeight: 25
 
-      - setWeight: 50
-      - pause:
-          duration: 30s
+        - analysis:
+            templates:
+              - templateName: success-rate-check
 
-      - setWeight: 100
+        - setWeight: 50
+
+        - analysis:
+            templates:
+              - templateName: success-rate-check
+
+        - setWeight: 100
 
 ---
 apiVersion: v1
