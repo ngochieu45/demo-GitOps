@@ -1,0 +1,26 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+
+metadata:
+  name: api-slo-alert
+  namespace: demo
+  labels:
+    release: kube-prometheus-stack
+
+spec:
+  groups:
+  - name: api-slo
+    rules:
+    - alert: ApiHighErrorRate
+      expr: |
+        (
+          sum(rate(flask_http_request_total{namespace="demo",status=~"5.."}[2m]))
+          /
+          sum(rate(flask_http_request_total{namespace="demo"}[2m]))
+        ) > 0.05
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "API error rate is higher than SLO"
+        description: "SLO: success rate >= 95%. Current error rate is above 5%."
