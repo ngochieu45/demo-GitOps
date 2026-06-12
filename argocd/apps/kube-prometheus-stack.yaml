@@ -23,9 +23,9 @@ spec:
           config:
             global:
               smtp_smarthost: "smtp.gmail.com:587"
-              smtp_from: "lyngochieu0405@gmail.com"
-              smtp_auth_username: "lyngochieu0405@gmail.com"
-              smtp_auth_password: "tmau ulcg kxrt akts"
+              smtp_from: "YOUR_EMAIL"
+              smtp_auth_username: "YOUR_EMAIL"
+              smtp_auth_password: "NEW_APP_PASSWORD"
 
             route:
               group_by:
@@ -35,7 +35,7 @@ spec:
             receivers:
               - name: email
                 email_configs:
-                  - to: "lyngochieu0405@gmail.com"
+                  - to: "YOUR_EMAIL"
                     send_resolved: true
 
               - name: "null"
