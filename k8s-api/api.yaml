@@ -31,10 +31,10 @@ spec:
 
         env:
         - name: ERROR_RATE
-          value: "0.5"
+          value: "0"
 
         - name: VERSION
-          value: "v4"
+          value: "v5"
 
         readinessProbe:
           httpGet:
