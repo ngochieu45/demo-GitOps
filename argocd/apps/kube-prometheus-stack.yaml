@@ -20,12 +20,15 @@ spec:
             serviceMonitorSelectorNilUsesHelmValues: false
             ruleSelectorNilUsesHelmValues: false
         alertmanager:
+          alertmanagerSpec:
+            secrets:
+              - alertmanager-email-secret
           config:
             global:
               smtp_smarthost: "smtp.gmail.com:587"
               smtp_from: "lyngochieu0405@gmail.com"
               smtp_auth_username: "lyngochieu0405@gmail.com"
-              smtp_auth_password: "tmau ulcg kxrt akts"
+              smtp_auth_password: /etc/alertmanager/secrets/alertmanager-email-secret/smtp_password
 
             route:
               group_by:
